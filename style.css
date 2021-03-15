@@ -1,0 +1,117 @@
+:root{
+    --firstPurple: #8a2b8a;
+    --secondPurple: #4d0240;
+    --thirdPurple: #22001d;
+    --fourthPurple: #ba55d3;
+    --yellow: #b88606;
+    --white: #fff;
+}
+
+body{
+    background:	linear-gradient(50deg,	var(--firstPurple) 0%,	var(--secondPurple) 47%,	var(--thirdPurple) 100%);
+    height: 100%;
+}
+
+.container{
+    margin: 50px auto;
+    width: 450px;
+    height: 100%;
+}
+
+.button-check{
+    float: right;
+    clear: right;
+    position: relative;
+}
+
+.button-check .around{
+    border-style: none;
+    border-radius: 15px;
+    width: 50px;
+    height: 29px;
+    background-color: var(--firstPurple);
+}
+
+.button-check .inside{
+    border-style: none;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: var(--secondPurple);
+
+	position: absolute;
+	top: 5%;
+    left: 5%;
+}
+
+.inside:hover{
+    cursor: pointer;
+}
+
+.row{
+    padding: 30px 0;
+}
+
+.row{
+    color: var(--white);
+}
+
+.row h1{
+    color: var(--yellow) !important;
+}
+
+.form{
+    background-color: var(--firstPurple);
+    border-radius: 15px;
+}
+
+.content-form{
+    padding: 2% 8%;
+    text-align: center;
+}
+
+.form-title{
+    margin: 20px 0;
+}
+
+.login{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.register{
+    color:  var(--fourthPurple);
+    font-size: 1.5em;
+
+}
+
+form input, form button{
+    display: block;
+    width: 95%;
+    height: 40px;
+    border-style: none;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+form input{
+    color: var(--fourthPurple);
+    text-indent: 5%;
+}
+
+form button{
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1em;
+}
+
+a:hover{
+    color: #222222
+}

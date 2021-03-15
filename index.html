@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dark Mode</title>
+        <link rel="stylesheet" type="text/css" href="style.css"></link>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="button-check">
+                <button type="button" class="around"></button>
+                <button type="button" class="inside" data-target="reverse"></button>
+            </div>
+            <div class="row">
+                <div class="main-title">
+                    <p>Bem Vindo ao</p>
+                    <h1>Codex Beta</h1>
+                </div>
+                <div class="form">
+                    <div class="content-form">
+                        <div class="form-title">
+                            <span class="login">Faça Login</span>
+                            <span class="register">Inscreva-se</span>
+                        </div>
+                        <form>
+                            <input type="text" placeholder="Nome do usuário" class="form-input">
+                            <input type="text" placeholder="Sua Senha" class="form-input1">
+                            <button type="button">Entrar</button>
+                        </form>
+                        <a href="#">Esqueceu a Senha?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            var buttonReverse, pressed, inside,
+
+            white = "#fff",
+            purple = {
+                firstPurple: "#8a2b8a",
+                secondPurple: "#4d0240",
+                thirdPurple: "#22001d",
+                fourthPurple: "#ba55d3"                
+            },
+            dark = {
+                aroundDark: "#585353",
+                firstDark: "#222"
+            }
+
+            window.addEventListener("click", changeMode)
+
+            function changeMode(event) {
+
+                pressed = event.target.dataset.target
+                inside = document.querySelector(".inside").style.left
+
+                buttonReverse = document.querySelector(`[data-target="${pressed}"]`)
+                if(buttonReverse){
+                    
+                    if(inside != "45%"){
+                        document.querySelector(".inside").style.setProperty("left", "45%")
+                        document.querySelector("body").style.setProperty("background", dark.firstDark)
+                        document.querySelector(".form-input").style.setProperty("--secondPurple", dark.firstDark)
+                        document.querySelector(".form-input1").style.setProperty("--secondPurple", dark.firstDark)
+                        document.querySelector(".inside").style.setProperty("--secondPurple", dark.firstDark)
+                        document.querySelector(".form").style.setProperty("--firstPurple", dark.aroundDark)
+                        document.querySelector(".around").style.setProperty("--firstPurple", dark.aroundDark)
+                        document.querySelector(".login").style.setProperty("color", "#666466")
+                        document.querySelector(".register").style.setProperty("color", white)
+                    }
+                    else{
+                        document.querySelector(".inside").style.setProperty("--secondPurple", purple.secondPurple)
+                        document.querySelector(".inside").style.setProperty("left", "5%")
+                        document.querySelector("body").style.setProperty("background",
+                        "linear-gradient(50deg," + purple.firstPurple + " 0%,	" +
+                        purple.secondPurple + " 47%,	" + purple.thirdPurple + " 100%)")
+                        document.querySelector(".form-input").style.setProperty("color", white)
+                        document.querySelector(".form-input1").style.setProperty("color", white)
+                        document.querySelector(".login").style.setProperty("color", white)
+                        document.querySelector(".register").style.setProperty("color", purple.fourthPurple)
+                        document.querySelector(".form").style.setProperty("--firstPurple", purple.firstPurple)
+                        document.querySelector(".around").style.setProperty("--firstPurple", purple.firstPurple)
+                        document.querySelector(".inside").style.setProperty("--secondPurple", purple.secondPurple)
+                    }
+                }             
+            }
+
+        </script>
+
+    </body>
+</html>
